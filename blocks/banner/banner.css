@@ -1,0 +1,15 @@
+.banner-container{
+    background-color: blue;
+}
+.banner-container [class^="children-"]{
+    position: relative;
+}
+.banner-container .txt-container{
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    color: #000;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px #fff;
+    font-style: italic;
+}
