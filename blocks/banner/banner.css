@@ -1,5 +1,5 @@
 .banner-container{
-    background-color: blue;
+    background-color: tan;
 }
 .banner-container [class^="children-"]{
     position: relative;

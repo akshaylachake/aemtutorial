@@ -1,4 +1,12 @@
-export default function decorate(block) {
+import { fetchPlaceholders } from '../../scripts/aem.js';
+
+export default async function decorate(block) {
+const placeholders = await fetchPlaceholders();
+
+const { colors,clickMe } = placeholders;
+
+console.log(colors)
+console.log(clickMe)
 
   block.classList.add("banner-body");
 
