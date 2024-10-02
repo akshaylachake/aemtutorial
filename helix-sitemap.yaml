@@ -1,5 +1,6 @@
 version: 1
-include:
-  path: /
-    priority: 1.0
-    changefreq: weekly
+sitemaps:
+  example:
+    source: /query-index
+    destination: /sitemap.xml
+    lastmod: YYYY-MM-DD
