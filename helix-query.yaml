@@ -1,0 +1,12 @@
+indices:
+  mysite:
+    include:
+      - '**'
+    exclude:
+      - /nav
+    target: /query-index.json
+    properties:
+      url:
+        select: head > meta[property="og:url"]
+        value: |
+          attribute(el,'content')
