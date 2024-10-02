@@ -1,5 +1,5 @@
 version: 1
-sitemaps:
-  example:
-    source: /query-index
-    destination: /sitemap.xml
+include:
+  path: /
+    priority: 1.0
+    changefreq: weekly
