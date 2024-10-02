@@ -18,3 +18,11 @@ indices:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss IST')
+      blocks:
+        select: none
+        value: |
+          headers['blocks']
+      pageTitle:
+        selectFirst: h1
+        value: |
+          textContent(el)
