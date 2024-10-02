@@ -1,5 +1,5 @@
+version: 1
 sitemaps:
   example:
-    source: /query-index.json
-    destination: /sitemap-en.xml
-    lastmod: YYYY-MM-DD
+    source: /query-index
+    destination: /sitemap.xml
