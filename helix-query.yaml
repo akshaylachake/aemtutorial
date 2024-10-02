@@ -4,7 +4,7 @@ indices:
       - '**'
     exclude:
       - /nav
-    target: /query-index.json
+    target: /query-index
     properties:
       url:
         select: head > meta[property="og:url"]
@@ -14,7 +14,7 @@ indices:
         select: head > meta[property="og:image"]
         value: |
           match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
-      lastmodified:
+      lastModified:
         select: none
         value: |
-        parseTimestamp(headers['last-modified'], 'ddd, DD MM YYYY hh:mm:ss IST')
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss IST')
