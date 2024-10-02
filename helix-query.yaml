@@ -9,4 +9,12 @@ indices:
       url:
         select: head > meta[property="og:url"]
         value: |
-          attribute(el,'content')
+          attribute(el, 'content')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      lastmodified:
+        select: none
+        value: |
+        parseTimestamp(headers['last-modified'], 'ddd, DD MM YYYY hh:mm:ss IST')
