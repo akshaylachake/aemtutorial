@@ -69,10 +69,6 @@
         height: 55vw;
     }
 }
-.carousel-container .carousel .item .data-container a {
-    text-transform: uppercase;
-    padding: 1em 2.5em;
-}
 .carousel-container .carousel .item img {
     width: 100%;
     height: 100%;
