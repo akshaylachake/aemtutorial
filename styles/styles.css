@@ -16,8 +16,8 @@
     --light-color: #f8f8f8;
     --dark-color: #505050;
     --text-color: #000;
-    --link-color: #3b63fb;
-    --link-hover-color: #1d3ecf;
+    --link-color: #000;
+    --link-hover-color: #ffea00;
     --primary: #ffea00;
 
     /* fonts */
@@ -111,7 +111,7 @@ h6 {
     margin-bottom: 0.25em;
     font-family: var(--heading-font-family);
     font-weight: 600;
-    line-height: 1.25;
+    line-height: 1.5;
     scroll-margin: 40px;
 }
 
@@ -188,20 +188,22 @@ button {
     max-width: 100%;
     margin: 12px 0;
     border: 2px solid transparent;
-    border-radius: 2.4em;
-    padding: 0.5em 1.2em;
+    border-radius: 0;
+    padding: 1em 2.5em;
     font-family: var(--body-font-family);
     font-style: normal;
     font-weight: 500;
+    font-size: var(--body-font-size-xxs);
     line-height: 1.25;
     text-align: center;
     text-decoration: none;
-    background-color: var(--link-color);
-    color: var(--background-color);
+    background-color: var(--primary);
+    color: var(--link-color);
     cursor: pointer;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
 a.button:hover,
@@ -272,14 +274,6 @@ main .section.highlight {
 }
 
 /* custom css */
-a.button:any-link {
-    border-radius: 0;
-    background-color: var(--primary);
-    color: #000;
-    font-size: var(--body-font-size-xxs);
-    text-transform: uppercase;
-    padding: 1em 2.5em;
-}
 @media (width >= 900px) {
     main {
         padding-top: 100px;
