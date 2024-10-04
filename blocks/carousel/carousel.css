@@ -1,0 +1,149 @@
+.carousel-container .carousel-wrapper {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+.carousel-container .slider-container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.carousel-container .carousel .item {
+    width: 100%;
+    height: 100%;
+    display: none;
+    animation: fadeOut 0.25s ease-in-out;
+}
+.carousel-container .carousel .item.active {
+    display: block;
+    animation: fadeIn 0.25s ease-in-out;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.carousel-container .carousel .item .data-container {
+    background-color: var(--background-color);
+    min-height: 180px;
+    padding: 0 28px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    box-sizing: border-box;
+}
+@media (width >= 900px) {
+    .carousel-container .carousel .item .img-container {
+        height: 40rem;
+    }
+}
+@media (width < 900px) {
+    .carousel-container .carousel .item .data-container {
+        width: 100%;
+        position: relative;
+        left: 0;
+        transform: unset;
+    }
+    .carousel-container .carousel .item .data-container h2 {
+        font-size: var(--heading-font-size-m);
+    }
+    .carousel-container .carousel .item .data-container p {
+        font-size: var(--body-font-size-xs);
+    }
+    .carousel-container .carousel .item .img-container {
+        height: 55vw;
+    }
+}
+.carousel-container .carousel .item .data-container a {
+    text-transform: uppercase;
+    padding: 1em 2.5em;
+}
+.carousel-container .carousel .item img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+}
+.carousel-container .carousel .item .caption {
+    width: 100%;
+    padding: var(--lx-space-01);
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-container .btn {
+    padding: 0;
+    position: absolute;
+    bottom: -7%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+}
+.carousel-container .btn.prev {
+    right: 4rem;
+}
+.carousel-container .btn.next {
+    right: 1rem;
+}
+.carousel-container .btn.prev::before,
+.carousel-container .btn.next::before {
+    background-image: url("../../icons/nav-arrow.png");
+    content: "";
+    background-position: center;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.carousel-container .btn.next::before {
+    transform: rotate(180deg);
+}
+
+.carousel-container .dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.carousel-container .dots .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s ease;
+}
+.carousel-container .dots .dot.active,
+.carousel-container .dots .dot:hover {
+    background-color: #000;
+}
