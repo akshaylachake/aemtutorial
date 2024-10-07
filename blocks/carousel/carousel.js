@@ -1,23 +1,25 @@
 export default async function decorate(block) {
   block.classList.add("slider-container");
-
+  let itemsCout = block.children.length;
   let docxData = Array.from(block.children);
 
   const carousel = document.createElement("div");
   carousel.classList.add("carousel");
   block.appendChild(carousel);
 
-  const prevButton = document.createElement("button");
-  prevButton.classList.add("btn", "prev");
-  block.appendChild(prevButton);
+  if (itemsCout > 1) {
+    const prevButton = document.createElement("button");
+    prevButton.classList.add("btn", "prev");
+    block.appendChild(prevButton);
 
-  const nextButton = document.createElement("button");
-  nextButton.classList.add("btn", "next");
-  block.appendChild(nextButton);
+    const nextButton = document.createElement("button");
+    nextButton.classList.add("btn", "next");
+    block.appendChild(nextButton);
 
-  const dots = document.createElement("div");
-  dots.classList.add("dots");
-  block.appendChild(dots);
+    const dots = document.createElement("div");
+    dots.classList.add("dots");
+    block.appendChild(dots);
+  }
 
   docxData.forEach((row, i) => {
     carousel.appendChild(row);
@@ -26,29 +28,43 @@ export default async function decorate(block) {
     if (i === 0) row.classList.add("active");
     row.children[0].classList.add("img-container");
     row.children[1].classList.add("data-container");
-
-    console.log(row);
   });
-
-  carouselInit();
+  carouselInit(block);
 }
 
-function carouselInit() {
-  let carousel = document.querySelector(".carousel");
+function carouselInit(carousel) {
+  console.log(carousel);
   let items = carousel.querySelectorAll(".item");
-  let dotsContainer = document.querySelector(".dots");
+  let dotsContainer = carousel.querySelector(".dots");
+  console.log(items, dotsContainer);
 
-  console.log(items);
   // Insert dots into the DOM
-  items.forEach((_, index) => {
-    let dot = document.createElement("span");
-    dot.classList.add("dot");
-    if (index === 0) dot.classList.add("active");
-    dot.dataset.index = index;
-    dotsContainer.appendChild(dot);
-  });
+  if (dotsContainer) {
+    items.forEach((_, index) => {
+      let dot = document.createElement("span");
+      dot.classList.add("dot");
+      if (index === 0) dot.classList.add("active");
+      dot.dataset.index = index;
+      dotsContainer.appendChild(dot);
+    });
 
-  let dots = document.querySelectorAll(".dot");
+    // Event listeners for buttons
+    carousel.querySelector(".prev").addEventListener("click", () => {
+      let index = [...items].findIndex((item) =>
+        item.classList.contains("active")
+      );
+      showItem((index - 1 + items.length) % items.length);
+    });
+
+    carousel.querySelector(".next").addEventListener("click", () => {
+      let index = [...items].findIndex((item) =>
+        item.classList.contains("active")
+      );
+      showItem((index + 1) % items.length);
+    });
+  }
+
+  let dots = carousel.querySelectorAll(".dot");
 
   // Function to show a specific item
   function showItem(index) {
@@ -61,21 +77,6 @@ function carouselInit() {
       }
     });
   }
-
-  // Event listeners for buttons
-  document.querySelector(".prev").addEventListener("click", () => {
-    let index = [...items].findIndex((item) =>
-      item.classList.contains("active")
-    );
-    showItem((index - 1 + items.length) % items.length);
-  });
-
-  document.querySelector(".next").addEventListener("click", () => {
-    let index = [...items].findIndex((item) =>
-      item.classList.contains("active")
-    );
-    showItem((index + 1) % items.length);
-  });
 
   // Event listeners for dots
   dots.forEach((dot) => {
