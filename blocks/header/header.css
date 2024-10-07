@@ -307,7 +307,8 @@ header nav .nav-tools {
         font-weight: 100;
         font-size: var(--body-font-size-xs);
     }
-    header nav .nav-sections li a:hover {
+    header nav .nav-sections li a:hover,
+    header nav .nav-sections li a.active {
         background-color: var(--primary);
         text-decoration: none;
     }

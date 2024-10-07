@@ -189,6 +189,17 @@ export default async function decorate(block) {
   block.append(navWrapper);
 
   onscroll();
+
+  // add active class to current nav link
+  const url = window.location.href;
+
+  navSections
+    .querySelectorAll(":scope .default-content-wrapper > ul li a")
+    .forEach((anchor) => {
+      if (window.location.href.indexOf(anchor.getAttribute("href")) > -1) {
+        anchor.classList.add("active");
+      }
+    });
 }
 
 function onscroll() {
