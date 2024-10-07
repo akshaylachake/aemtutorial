@@ -5,6 +5,11 @@
     align-items: normal;
     gap: 0;
 }
+@media (width < 900px) {
+    .fragment-container .featured-article > div {
+        flex-direction: column-reverse;
+    }
+}
 .fragment-container .featured-article > div > div:last-child {
     padding: 3.5em 2em 2em;
 }

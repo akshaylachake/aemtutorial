@@ -9,6 +9,11 @@
     position: relative;
     margin-bottom: 7rem;
 }
+@media (width < 900px) {
+    .carousel-container .slider-container {
+        margin-bottom: 3rem;
+    }
+}
 
 .carousel-container .carousel .item {
     width: 100%;
@@ -128,7 +133,7 @@
     justify-content: center;
     gap: 10px;
     position: absolute;
-    bottom: -5%;
+    bottom: -4%;
     left: 50%;
     transform: translate(-50%, 0);
 }
@@ -143,4 +148,10 @@
 .carousel-container .dots .dot.active,
 .carousel-container .dots .dot:hover {
     background-color: #000;
+}
+@media (width < 900px) {
+    .carousel-container .dots {
+        left: 1.6rem;
+        transform: none;
+    }
 }

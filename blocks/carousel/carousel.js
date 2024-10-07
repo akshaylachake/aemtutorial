@@ -27,7 +27,7 @@ export default async function decorate(block) {
     row.children[0].classList.add("img-container");
     row.children[1].classList.add("data-container");
 
-    console.log("=======================");
+    console.log(row);
   });
 
   carouselInit();
