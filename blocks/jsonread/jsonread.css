@@ -1,20 +1,20 @@
 .jsonread-container ul {
     list-style-type: none;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 .jsonread-container li {
     padding: 10px;
     border: 1px solid #ccc;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .pagination-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px
+    margin-top: 20px;
 }
 
 .pagination-container a {
@@ -24,26 +24,59 @@
     border: 1px solid #ddd;
     border-right: none;
     background-color: #f1f1f1;
-    transition: background-color 0.3s ease-in-out
+    transition: background-color 0.3s ease-in-out;
 }
 
 .pagination-container a:first-child {
     border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px
+    border-bottom-left-radius: 5px;
 }
 
 .pagination-container a:last-child {
     border-right: 1px solid #ddd;
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px
+    border-bottom-right-radius: 5px;
 }
 
 .pagination-container a.active {
-    background-color: rgb(71, 113, 124);
-    border: 1px solid rgb(71, 113, 124);
-    color: #fff;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    color: #000;
 }
 
 .pagination-container a:hover:not(.active) {
-    background-color: #ddd
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.item-container ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+    grid-gap: 24px;
+}
+.item-container ul li {
+    padding: 0;
+    overflow: hidden;
+}
+.item-container ul li .img-container img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    height: 200px;
+    transition: 0.3s;
+}
+.item-container ul li .data-container {
+    padding: 0 1rem 1rem;
+}
+.item-container ul li .data-container p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: dimgray;
+    font-size: var(--body-font-size-xxs);
+}
+.item-container ul li:hover .img-container img {
+    transform: scale(1.1);
 }

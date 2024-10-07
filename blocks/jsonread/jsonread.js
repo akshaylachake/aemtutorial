@@ -20,8 +20,6 @@ export default async function decorate(block) {
       let resp = await fetch(url + `?offset=${offset}&limit=${limit}`);
       let json = await resp.json();
 
-      // console.log(url,resp,json)
-
       showDataWithPagination(json);
     } catch (err) {
       console.log(err);
@@ -32,7 +30,7 @@ export default async function decorate(block) {
 function showDataWithPagination(json) {
   const dataContainer = document.querySelector("#data-container");
   const items = json.data;
-  const itemsPerPage = 5;
+  const itemsPerPage = 4;
   let currentPage = 1;
   let totalPages;
 
@@ -51,11 +49,24 @@ function showDataWithPagination(json) {
     const ul = document.createElement("ul");
     pageItems.forEach((i) => {
       let li = document.createElement("li");
-      li.appendChild(
-        document.createTextNode(
-          `${i.FName} - ${i.LName} - ${i.Address} - ${i.Date}`
-        )
-      );
+      const imgWrapper = document.createElement("div");
+      imgWrapper.classList.add("img-container");
+
+      const imgEle = document.createElement("img");
+      imgWrapper.appendChild(imgEle);
+      imgEle.setAttribute("src", i.image);
+
+      const bodyWrapper = document.createElement("div");
+      bodyWrapper.classList.add("data-container");
+
+      const titleWrapper = document.createElement("h4");
+      titleWrapper.innerHTML = i.title;
+
+      const dataWrapper = document.createElement("p");
+      dataWrapper.innerHTML = i.description;
+      bodyWrapper.append(titleWrapper, dataWrapper);
+
+      li.append(imgWrapper, bodyWrapper);
       ul.appendChild(li);
     });
 
