@@ -1,0 +1,31 @@
+.team-container .default-content-wrapper > p {
+    font-size: var(--body-font-size-xxs);
+    font-style: italic;
+}
+.team > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+    grid-gap: 24px;
+}
+
+.team > ul > li {
+    border: 1px solid #dadada;
+    background-color: var(--background-color);
+}
+
+.team .team-card-body {
+    margin: 16px;
+}
+
+.team .team-card-image {
+    line-height: 0;
+}
+
+.team > ul > li img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
