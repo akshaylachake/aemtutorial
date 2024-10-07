@@ -33,12 +33,10 @@ export default async function decorate(block) {
 }
 
 function carouselInit(carousel) {
-  console.log(carousel);
   let items = carousel.querySelectorAll(".item");
   let dotsContainer = carousel.querySelector(".dots");
-  console.log(items, dotsContainer);
 
-  // Insert dots into the DOM
+  // Insert dots into the DOM and Add event listeners for buttons
   if (dotsContainer) {
     items.forEach((_, index) => {
       let dot = document.createElement("span");
@@ -48,7 +46,6 @@ function carouselInit(carousel) {
       dotsContainer.appendChild(dot);
     });
 
-    // Event listeners for buttons
     carousel.querySelector(".prev").addEventListener("click", () => {
       let index = [...items].findIndex((item) =>
         item.classList.contains("active")
