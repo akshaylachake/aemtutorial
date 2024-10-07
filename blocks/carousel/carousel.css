@@ -155,3 +155,15 @@
         transform: none;
     }
 }
+
+.carousel-container .next-adventure .carousel .item .data-container {
+    bottom: -4rem;
+}
+.carousel-container .next-adventure .carousel .item img {
+    object-position: bottom;
+}
+@media (width < 900px) {
+    .carousel-container .next-adventure .carousel .item .data-container {
+        bottom: 0;
+    }
+}

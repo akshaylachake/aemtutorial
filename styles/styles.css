@@ -108,7 +108,7 @@ h4,
 h5,
 h6 {
     margin-top: 0.8em;
-    margin-bottom: 0.25em;
+    margin-bottom: 0.4em;
     font-family: var(--heading-font-family);
     font-weight: 600;
     line-height: 1.5;
@@ -274,6 +274,17 @@ main .section.highlight {
 }
 
 /* custom css */
+h2 {
+    position: relative;
+}
+.section .default-content-wrapper h2:after {
+    content: "";
+    border-bottom: 2px solid var(--primary);
+    content: "";
+    display: block;
+    padding-top: 8px;
+    width: 84px;
+}
 @media (width >= 900px) {
     main {
         padding-top: 100px;
