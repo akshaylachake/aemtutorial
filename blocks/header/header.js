@@ -204,7 +204,7 @@ export default async function decorate(block) {
 
 function onscroll() {
   window.addEventListener("scroll", function () {
-    const body = document.querySelector(".aem-theme");
+    const body = document.querySelector("body");
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > 0) {

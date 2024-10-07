@@ -38,7 +38,6 @@ header nav[aria-expanded="true"] {
         max-width: 1264px;
         padding: 0 32px;
     }
-
     header nav[aria-expanded="true"] {
         min-height: 0;
         overflow: visible;
@@ -271,13 +270,44 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
     grid-area: tools;
+    flex-basis: 100%;
+    background-color: #202020;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: right;
+}
+header nav .nav-tools .default-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 32px;
+    max-width: 1264px;
+    padding: 0 32px;
+    flex-wrap: wrap;
+    flex-flow: wrap-reverse;
+}
+header nav .nav-tools .default-content-wrapper {
+    flex-direction: row-reverse;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+}
+header nav .nav-tools a.button:any-link {
+    all: unset;
+    color: #f7f7f7;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 2;
 }
 
 /* custom css */
 @media (width >= 900px) {
     header .nav-wrapper {
         padding-bottom: 50px;
-        padding-top: 50px;
+        padding-top: 78px;
         -webkit-transition: padding-bottom 0.25s ease, padding-top 0.25s;
         -webkit-transition: padding-bottom 0.25s ease-out,
             padding-top 0.25s ease ease-out 0.25s;
@@ -286,7 +316,7 @@ header nav .nav-tools {
     }
     .sticky .nav-wrapper {
         padding-bottom: 15px;
-        padding-top: 15px;
+        padding-top: 38px;
         -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.26);
         box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.26);
         -webkit-transition: padding-bottom 0.25s ease, padding-top 0.25s;
@@ -311,5 +341,10 @@ header nav .nav-tools {
     header nav .nav-sections li a.active {
         background-color: var(--primary);
         text-decoration: none;
+    }
+}
+@media (width < 900px) {
+    header nav {
+        margin-top: 2.2rem;
     }
 }

@@ -285,6 +285,11 @@ h2 {
     padding-top: 8px;
     width: 84px;
 }
+.separator-container .separator-wrapper .separator {
+    width: 100%;
+    border: 1px solid #ebebeb;
+    margin: 4rem 0px;
+}
 @media (width >= 900px) {
     main {
         padding-top: 100px;
