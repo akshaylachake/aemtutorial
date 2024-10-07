@@ -2,11 +2,15 @@ version: 1
 indices:
   mysite:
     include:
-      - '**'
+      - "**"
     exclude:
       - /nav
     target: /query-index
     properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
       url:
         select: head > meta[property="og:url"]
         value: |
@@ -15,6 +19,10 @@ indices:
         select: head > meta[property="og:image"]
         value: |
           match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      description:
+        select: head > meta[property="og:description"]
+        value: |
+          attribute(el, 'content')
       lastModified:
         select: none
         value: |
