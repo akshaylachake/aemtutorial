@@ -20,6 +20,8 @@ export default async function decorate(block) {
       let resp = await fetch(url + `?offset=${offset}&limit=${limit}`);
       let json = await resp.json();
 
+      console.log(url, json.data);
+
       showDataWithPagination(json);
     } catch (err) {
       console.log(err);
