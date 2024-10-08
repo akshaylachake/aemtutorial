@@ -12,7 +12,7 @@ function createFieldWrapper(fd) {
 
 const ids = [];
 function generateFieldId(fd, suffix = "") {
-  const slug = toClassName(`form-${fd.Label || fd.Name}${suffix}`);
+  const slug = toClassName(`form-${fd.Field || fd.Name}${suffix}`);
   ids[slug] = ids[slug] || 0;
   const idSuffix = ids[slug] ? `-${ids[slug]}` : "";
   ids[slug] += 1;
@@ -35,7 +35,7 @@ function createLabel(fd) {
 
 function setCommonAttributes(field, fd) {
   field.id = fd.Id;
-  field.name = fd.Label || fd.Name;
+  field.name = fd.Field || fd.Name;
   field.required =
     fd.Mandatory &&
     (fd.Mandatory.toLowerCase() === "true" ||
