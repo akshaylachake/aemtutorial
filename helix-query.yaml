@@ -5,6 +5,7 @@ indices:
       - "**"
     exclude:
       - /nav
+      - /registration
     target: /query-index
     properties:
       title:
